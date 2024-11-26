@@ -3,18 +3,16 @@ import matplotlib.pyplot as plt
 from matplotlib.dates import DateFormatter
 
 # Load the CSV file
-file_path = r"C:/Users/deniz/Desktop/performance2.csv"
-data = pd.read_csv(file_path, skiprows=1)  # Skip the first descriptive row
+file_path = "results/performance.csv"
+data = pd.read_csv(file_path, skiprows=1) 
 
 data.columns = ["Timestamp", "Available_Memory_MB", "CPU_Usage_Percent"]
 data = data.dropna(subset=["CPU_Usage_Percent"])
 
-# Convert the columns to appropriate data types
 data["Timestamp"] = pd.to_datetime(data["Timestamp"])
 data["Available_Memory_MB"] = pd.to_numeric(data["Available_Memory_MB"], errors="coerce")
 data["CPU_Usage_Percent"] = pd.to_numeric(data["CPU_Usage_Percent"], errors="coerce")
 
-# Plot CPU Usage and Available Memory
 plt.figure(figsize=(12, 6))
 
 # Plot CPU Usage
@@ -39,6 +37,5 @@ plt.title("Available Memory Over Time")
 plt.grid()
 plt.legend()
 
-# Adjust layout and show the plots
 plt.tight_layout()
 plt.show()

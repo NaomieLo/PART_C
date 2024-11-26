@@ -43,7 +43,7 @@ def log_system_usage():
 
 # Run performance tests
 def run_performance_tests():
-    object_counts = [10, 100, 500, 1000]  # Test with different numbers of objects
+    object_counts = [10, 100, 500, 1000] 
     results = {"todos": [], "projects": []}
 
     for n in object_counts:
