@@ -5,20 +5,12 @@ import matplotlib.pyplot as plt
 # Load CSV
 file_path = "Performance_Testing/results/performance.csv"
 data = pd.read_csv(file_path, skiprows=1)
-
-# Rename columns
 data.columns = ["Timestamp", "Available_Memory_MB", "CPU_Usage_Percent"]
-
-# Drop missing values
 data = data.dropna(subset=["CPU_Usage_Percent"])
 
-# Convert to appropriate data types
 data["Timestamp"] = pd.to_datetime(data["Timestamp"])
 data["Available_Memory_MB"] = pd.to_numeric(data["Available_Memory_MB"], errors="coerce")
 data["CPU_Usage_Percent"] = pd.to_numeric(data["CPU_Usage_Percent"], errors="coerce")
-
-# Debugging - Check if data is loaded correctly
-print(data.head())
 
 # Ensure output directory exists
 plot_dir = "Performance_Testing/results/plots"
@@ -47,11 +39,9 @@ plt.legend()
 
 # Adjust layout and save the plot
 plt.tight_layout()
-plt.subplots_adjust(hspace=0.5)  # Add more vertical space between plots
+plt.subplots_adjust(hspace=0.5) 
 save_path = os.path.join(plot_dir, "cpu_memory_analysis.png")
-plt.savefig(save_path)  # Save the plot BEFORE showing it
+plt.savefig(save_path)  
 
-# Display the plot for debugging
 plt.show()
-
 print(f"Plot saved successfully at: {save_path}")
