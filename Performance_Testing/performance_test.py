@@ -39,41 +39,34 @@ def measure_delete_time(ids, delete_func):
 def log_system_usage():
     cpu = psutil.cpu_percent(interval=1)
     memory = psutil.virtual_memory().percent
-    return cpu, memory
+    with open("results/performance_logs/system_usage.txt", "a") as f:
+        f.write(f"Time: {time.ctime()}, CPU: {cpu}%, Memory: {memory}%\n")
+    print(f"CPU Usage: {cpu}%, Memory Usage: {memory}%")
 
 # Run performance tests
 def run_performance_tests():
-    object_counts = [10, 100, 500, 1000] 
+    object_counts = [10, 100, 500, 1000]  # Test with different numbers of objects
     results = {"todos": [], "projects": []}
 
     for n in object_counts:
-        print(f"\n=== Testing with {n} Objects ===\n")
+        print(f"\nTesting with {n} objects...")
+        log_system_usage()
 
         # Measure Todos
-        print("[Todos]")
-        cpu_before, mem_before = log_system_usage()
+        print("Measuring Todos...")
         todo_ids, todo_create_time = measure_create_time(create_random_todo, n)
         todo_update_time = measure_update_time(todo_ids, update_todo)
         todo_delete_time = measure_delete_time(todo_ids, delete_todo)
-        cpu_after, mem_after = log_system_usage()
         results["todos"].append((n, todo_create_time, todo_update_time, todo_delete_time))
 
-        print(f"Create Time: {todo_create_time:.2f}s, Update Time: {todo_update_time:.2f}s, Delete Time: {todo_delete_time:.2f}s")
-        print(f"CPU Usage: Before {cpu_before}%, After {cpu_after}%")
-        print(f"Memory Usage: Before {mem_before}%, After {mem_after}%\n")
-
         # Measure Projects
-        print("[Projects]")
-        cpu_before, mem_before = log_system_usage()
+        print("Measuring Projects...")
         project_ids, project_create_time = measure_create_time(create_random_project, n)
         project_update_time = measure_update_time(project_ids, update_project)
         project_delete_time = measure_delete_time(project_ids, delete_project)
-        cpu_after, mem_after = log_system_usage()
         results["projects"].append((n, project_create_time, project_update_time, project_delete_time))
 
-        print(f"Create Time: {project_create_time:.2f}s, Update Time: {project_update_time:.2f}s, Delete Time: {project_delete_time:.2f}s")
-        print(f"CPU Usage: Before {cpu_before}%, After {cpu_after}%")
-        print(f"Memory Usage: Before {mem_before}%, After {mem_after}%\n")
+        log_system_usage()
 
     save_results(results)
     plot_results(results)

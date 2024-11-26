@@ -1,8 +1,8 @@
-Todos - Objects: 10, Create: 0.06s, Update: 0.04s, Delete: 0.03s
-Todos - Objects: 100, Create: 0.39s, Update: 0.27s, Delete: 0.35s
-Todos - Objects: 500, Create: 2.02s, Update: 1.55s, Delete: 1.50s
-Todos - Objects: 1000, Create: 3.37s, Update: 3.41s, Delete: 3.37s
-Projects - Objects: 10, Create: 0.05s, Update: 0.03s, Delete: 0.04s
-Projects - Objects: 100, Create: 0.37s, Update: 0.33s, Delete: 0.33s
-Projects - Objects: 500, Create: 1.78s, Update: 1.98s, Delete: 1.64s
-Projects - Objects: 1000, Create: 3.37s, Update: 3.79s, Delete: 4.01s
+Todos - Objects: 10, Create: 0.06s, Update: 0.03s, Delete: 0.03s
+Todos - Objects: 100, Create: 0.37s, Update: 0.35s, Delete: 0.31s
+Todos - Objects: 500, Create: 1.59s, Update: 1.61s, Delete: 1.53s
+Todos - Objects: 1000, Create: 3.21s, Update: 3.46s, Delete: 3.39s
+Projects - Objects: 10, Create: 0.05s, Update: 0.05s, Delete: 0.03s
+Projects - Objects: 100, Create: 0.38s, Update: 0.33s, Delete: 0.33s
+Projects - Objects: 500, Create: 1.55s, Update: 1.77s, Delete: 1.69s
+Projects - Objects: 1000, Create: 3.39s, Update: 3.67s, Delete: 3.45s
