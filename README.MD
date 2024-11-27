@@ -23,7 +23,7 @@
 
 ### SonarQube Steps (MAC)
 
-1. **CD into OS Folder**Example for Mac:
+1. **CD into OS Folder**
 
 ```bash
    cd ~/Users/naomielo~/Desktop/sonar-scanner-6.2.1.4610-macosx-x64/bin/thingifier-1.5.5
