@@ -15,11 +15,11 @@
 
 #### Performance Test
 
-[Watch todos test video here](https://drive.google.com/file/d/1KmXYsQmA132BbuFMT0AWuFWZCH6-_DgO/view?usp=sharing)
+[Watch performance test video here](https://drive.google.com/file/d/1KmXYsQmA132BbuFMT0AWuFWZCH6-_DgO/view?usp=sharing)
 
 #### Static Analysis
 
-[Watch projects test video here](https://drive.google.com/file/d/1SOUsaYedDpKGR9FLof1zvqZF3y8ufXee/view?usp=sharing)
+[Watch static analysis test video here](https://drive.google.com/file/d/1SOUsaYedDpKGR9FLof1zvqZF3y8ufXee/view?usp=sharing)
 
 ### SonarQube Steps (MAC)
 
